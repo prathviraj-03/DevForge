@@ -6,7 +6,7 @@ export const siteData = {
   },
 
   hero: {
-    badge: "🚀 50+ Projects Delivered",
+    badge: "🚀 Fresh & Hungry",
     heading: "Build Fast.",
     headingAccent: "Scale Smart.",
     subheading:
@@ -14,10 +14,10 @@ export const siteData = {
     cta: "Get a Free Consultation",
     ctaSecondary: "View Our Work",
     stats: [
-      { value: "50+", label: "Projects Shipped" },
-      { value: "98%", label: "Client Satisfaction" },
-      { value: "72h", label: "Avg. First Delivery" },
-      { value: "3x", label: "Avg. ROI Boost" },
+      { value: "100%", label: "Commitment" },
+      { value: "24/7", label: "Support" },
+      { value: "Fast", label: "Delivery" },
+      { value: "Clean", label: "Code" },
     ],
   },
 
@@ -94,15 +94,15 @@ export const siteData = {
       ],
     },
     {
-      icon: "📱",
-      title: "Mobile Apps",
+      icon: "�",
+      title: "Custom Software Development",
       description:
-        "Cross-platform iOS & Android apps with React Native. One codebase, native performance, half the cost.",
+        "Bespoke web applications, internal tools, and SaaS platforms built to solve your unique business challenges.",
       features: [
-        "iOS & Android",
-        "Offline Support",
-        "Push Notifications",
-        "App Store Publishing",
+        "SaaS Platforms",
+        "Internal Dashboards",
+        "Admin Panels",
+        "Automation Workflows",
       ],
     },
     {
@@ -190,7 +190,7 @@ export const siteData = {
         "14-day delivery",
         "30-day support",
       ],
-      notIncluded: ["Mobile app", "AI features"],
+      notIncluded: ["Custom Software", "AI features"],
       cta: "Most Popular — Start Now",
       highlight: true,
     },
@@ -202,7 +202,7 @@ export const siteData = {
       description: "End-to-end product development for funded startups.",
       features: [
         "Unlimited pages",
-        "Mobile app included",
+        "Complex Web Apps",
         "AI/ML integration",
         "Custom backend & API",
         "DevOps & cloud setup",
@@ -325,7 +325,7 @@ export const siteData = {
   faqs: [
     {
       q: "How long does a typical project take?",
-      a: "Landing pages: 5–7 days. Web apps: 3–8 weeks. Mobile apps: 6–12 weeks. We'll give you an exact timeline in your free consultation.",
+        a: "Landing pages: 5–7 days. Web apps: 3–8 weeks. Custom software: 6–12 weeks. We'll give you an exact timeline in your free consultation.",
     },
     {
       q: "Do you work with international clients?",

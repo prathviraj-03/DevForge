@@ -148,3 +148,15 @@ export default function ProjectsPage() {
     </>
   );
 }
+
+function getGradientColors(cls) {
+  const map = {
+    "from-amber-500 to-orange-600": "#f59e0b, #ea580c",
+    "from-emerald-500 to-teal-600": "#10b981, #0d9488",
+    "from-purple-500 to-pink-600": "#a855f7, #db2777",
+    "from-blue-500 to-cyan-600": "#3b82f6, #0891b2",
+    "from-rose-500 to-red-600": "#f43f5e, #dc2626",
+    "from-violet-500 to-indigo-600": "#8b5cf6, #4f46e5",
+  };
+  return map[cls] || "#f59e0b, #ea580c";
+}

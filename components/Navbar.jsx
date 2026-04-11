@@ -43,11 +43,6 @@ export default function Navbar() {
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 68 }}>
           {/* Logo */}
           <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
-            <div style={{
-              width: 36, height: 36, background: "var(--amber)", borderRadius: 8,
-              display: "flex", alignItems: "center", justifyContent: "center",
-              fontSize: 18, fontFamily: "'Rubik Glitch', system-ui", fontWeight: 400, color: "#000",
-            }}>⬡</div>
             <span style={{ fontFamily: "'Rubik Glitch', system-ui", fontWeight: 400, fontSize: 24, color: "var(--text-primary)" }}>
               {siteData.brand.name}
             </span>
