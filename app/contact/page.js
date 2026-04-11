@@ -63,10 +63,10 @@ export default function ContactPage() {
                     onMouseEnter={e => { e.currentTarget.style.borderColor = "var(--amber)"; }}
                     onMouseLeave={e => { e.currentTarget.style.borderColor = "var(--border)"; }}
                   >
-                    <Mail size={22} />
-                    <div>
+                    <Mail size={22} style={{ flexShrink: 0 }} />
+                    <div style={{ minWidth: 0 }}>
                       <p style={{ fontSize: 11, color: "var(--text-muted)", fontWeight: 600, marginBottom: 2, fontFamily: "'Outfit', sans-serif", letterSpacing: "0.05em", textTransform: "uppercase" }}>Email</p>
-                      <p style={{ fontSize: 14, fontWeight: 500 }}>{contact.email}</p>
+                      <p style={{ fontSize: 14, fontWeight: 500, wordBreak: "break-word" }}>{contact.email}</p>
                     </div>
                   </a>
                   <a href={`tel:${contact.phone}`} style={{
@@ -78,25 +78,25 @@ export default function ContactPage() {
                     onMouseEnter={e => { e.currentTarget.style.borderColor = "var(--amber)"; }}
                     onMouseLeave={e => { e.currentTarget.style.borderColor = "var(--border)"; }}
                   >
-                    <Phone size={22} />
-                    <div>
+                    <Phone size={22} style={{ flexShrink: 0 }} />
+                    <div style={{ minWidth: 0 }}>
                       <p style={{ fontSize: 11, color: "var(--text-muted)", fontWeight: 600, marginBottom: 2, fontFamily: "'Outfit', sans-serif", letterSpacing: "0.05em", textTransform: "uppercase" }}>Phone</p>
-                      <p style={{ fontSize: 14, fontWeight: 500 }}>{contact.phone}</p>
+                      <p style={{ fontSize: 14, fontWeight: 500, wordBreak: "break-word" }}>{contact.phone}</p>
                     </div>
                   </a>
                   <a href={contact.whatsapp} target="_blank" rel="noopener noreferrer" style={{
                     display: "flex", alignItems: "center", gap: 14, textDecoration: "none",
                     padding: "14px 18px", borderRadius: 10,
-                    background: "rgba(37,211,102,0.07)", border: "1px solid rgba(37,211,102,0.25)",
-                    transition: "all 0.2s", color: "#25D366",
+                    background: "rgba(255,255,255,0.03)", border: "1px solid var(--border)",
+                    transition: "all 0.2s", color: "var(--text-primary)",
                   }}
-                    onMouseEnter={e => { e.currentTarget.style.background = "rgba(37,211,102,0.12)"; }}
-                    onMouseLeave={e => { e.currentTarget.style.background = "rgba(37,211,102,0.07)"; }}
+                    onMouseEnter={e => { e.currentTarget.style.borderColor = "var(--amber)"; }}
+                    onMouseLeave={e => { e.currentTarget.style.borderColor = "var(--border)"; }}
                   >
-                    <MessageCircle size={22} />
-                    <div>
-                      <p style={{ fontSize: 11, fontWeight: 600, marginBottom: 2, fontFamily: "'Outfit', sans-serif", letterSpacing: "0.05em", textTransform: "uppercase" }}>WhatsApp</p>
-                      <p style={{ fontSize: 14, fontWeight: 600 }}>Start a chat instantly</p>
+                    <MessageCircle size={22} style={{ flexShrink: 0, color: "var(--amber)" }} />
+                    <div style={{ minWidth: 0 }}>
+                      <p style={{ fontSize: 11, color: "var(--text-muted)", fontWeight: 600, marginBottom: 2, fontFamily: "'Outfit', sans-serif", letterSpacing: "0.05em", textTransform: "uppercase" }}>WhatsApp</p>
+                      <p style={{ fontSize: 14, fontWeight: 600, wordBreak: "break-word" }}>Start a chat instantly</p>
                     </div>
                   </a>
                   <div style={{
@@ -105,10 +105,10 @@ export default function ContactPage() {
                     background: "rgba(255,255,255,0.02)", border: "1px solid var(--border)",
                     color: "var(--text-secondary)",
                   }}>
-                    <MapPin size={22} />
-                    <div>
+                    <MapPin size={22} style={{ flexShrink: 0 }} />
+                    <div style={{ minWidth: 0 }}>
                       <p style={{ fontSize: 11, color: "var(--text-muted)", fontWeight: 600, marginBottom: 2, fontFamily: "'Outfit', sans-serif", letterSpacing: "0.05em", textTransform: "uppercase" }}>Location</p>
-                      <p style={{ fontSize: 14, fontWeight: 500, color: "var(--text-primary)" }}>{contact.location}</p>
+                      <p style={{ fontSize: 14, fontWeight: 500, color: "var(--text-primary)", wordBreak: "break-word" }}>{contact.location}</p>
                     </div>
                   </div>
                 </div>
@@ -135,7 +135,11 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
-          <style>{`@media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr !important; } }`}</style>
+          <style>{`
+            @media (max-width: 768px) { 
+              .contact-grid { grid-template-columns: 1fr !important; } 
+            }
+          `}</style>
         </div>
       </section>
 

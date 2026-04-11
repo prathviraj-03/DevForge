@@ -1,7 +1,9 @@
 import nodemailer from "nodemailer";
+import { siteData } from "@/data/siteData";
 
 function createEmailBody({ name, email, budget, message }) {
   const formattedMessage = message ? message.replaceAll("\n", "<br />") : "";
+  const { brand } = siteData;
   return `
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +25,7 @@ function createEmailBody({ name, email, budget, message }) {
       <tr>
         <td style="padding: 40px 30px; text-align: center; border-bottom: 1px solid #1e1e1e; background-color: #0f0f0f; border-radius: 16px 16px 0 0;">
           <h1 class="logo-font" style="margin: 0; color: #f59e0b; font-size: 32px; font-weight: 400; letter-spacing: 2px;">
-            ⬡ DevForge
+            ${brand.name}
           </h1>
           <p class="font-heading" style="margin: 12px 0 0 0; color: #9a9a9a; font-size: 14px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase;">
             New Project Inquiry
@@ -71,7 +73,7 @@ function createEmailBody({ name, email, budget, message }) {
       <tr>
         <td style="background-color: #0f0f0f; padding: 24px; border-top: 1px solid #1e1e1e; text-align: center; border-radius: 0 0 16px 16px;">
           <p style="margin: 0; color: #505050; font-size: 12px; line-height: 1.5;">
-            This message was securely routed from your DevForge portal.<br>
+            This message was securely routed from your ${brand.name} portal.<br>
             <span style="color: #707070;">Reply to this email directly to contact the prospect.</span>
           </p>
         </td>

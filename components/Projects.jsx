@@ -29,7 +29,7 @@ export default function Projects({ preview = false }) {
             <div
               key={p.title}
               className="card card-hover"
-              style={{ overflow: "hidden", display: "flex", flexDirection: "column" }}
+              style={{ overflow: "hidden", display: "flex", flexDirection: "column", flexShrink: 0 }}
             >
               {/* Top Image */}
               <img 
@@ -83,7 +83,21 @@ export default function Projects({ preview = false }) {
 
       <style>{`
         @media (max-width: 900px) { .projects-grid { grid-template-columns: repeat(2, 1fr) !important; } }
-        @media (max-width: 650px) { .projects-grid { grid-template-columns: 1fr !important; } }
+        @media (max-width: 768px) {
+          .projects-grid { 
+            display: flex !important;
+            overflow-x: auto !important;
+            scroll-snap-type: x mandatory !important;
+            padding-bottom: 20px !important;
+            border: none !important;
+          }
+          .projects-grid > div {
+            flex: 0 0 85% !important;
+            min-width: 280px !important;
+            scroll-snap-align: start !important;
+            margin-right: 16px !important;
+          }
+        }
       `}</style>
     </section>
   );

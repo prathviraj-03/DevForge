@@ -110,8 +110,23 @@ export default function Services({ preview = false }) {
 
       <style>{`
         .services-grid { grid-template-columns: repeat(2, 1fr) !important; }
-        @media (max-width: 560px) {
-          .services-grid { grid-template-columns: 1fr !important; }
+        @media (max-width: 768px) {
+          .services-grid { 
+            display: flex !important;
+            overflow-x: auto !important;
+            scroll-snap-type: x mandatory !important;
+            padding-bottom: 20px !important;
+            border: none !important;
+            border-radius: 0 !important;
+            gap: 16px !important;
+          }
+          .services-grid > div {
+            flex: 0 0 85% !important;
+            min-width: 280px !important;
+            scroll-snap-align: start !important;
+            border: 1px solid var(--border) !important;
+            border-radius: 16px !important;
+          }
         }
       `}</style>
     </section>

@@ -45,13 +45,14 @@ export default function ProjectsPage() {
                 overflow: "hidden",
                 gridColumn: i === 0 ? "span 3" : "auto",
                 display: "flex",
-                flexDirection: i === 0 ? "row" : "column",
+                flexDirection: "column",
                 border: i === 0 ? "1px solid var(--amber)" : "1px solid var(--border)",
                 background: i === 0 ? "rgba(245,158,11,0.015)" : "var(--bg-card)",
+                flexShrink: 0
               }}>
                 {/* Decorative header */}
                 <div style={{
-                  height: i === 0 ? "auto" : 200, width: i === 0 ? "45%" : "100%", position: "relative",
+                  height: i === 0 ? "auto" : 200, width: "100%", position: "relative",
                   background: `linear-gradient(135deg, ${getGradientColors(p.color)})`,
                   display: "flex", alignItems: "center", justifyContent: "center",
                 }}>
@@ -107,9 +108,19 @@ export default function ProjectsPage() {
               .projects-grid { grid-template-columns: repeat(2, 1fr) !important; }
               .projects-grid > div:first-child { grid-column: span 2 !important; }
             }
-            @media (max-width: 580px) {
-              .projects-grid { grid-template-columns: 1fr !important; }
-              .projects-grid > div:first-child { grid-column: span 1 !important; }
+            @media (max-width: 768px) {
+              .projects-grid { 
+                display: flex !important;
+                overflow-x: auto !important;
+                scroll-snap-type: x mandatory !important;
+                padding-bottom: 20px !important;
+                gap: 16px !important;
+              }
+              .projects-grid > div {
+                flex: 0 0 85% !important;
+                min-width: 280px !important;
+                scroll-snap-align: start !important;
+              }
             }
           `}</style>
         </div>

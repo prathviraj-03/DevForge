@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { siteData } from "@/data/siteData";
+import BrandLogo from "@/components/BrandLogo";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -52,9 +53,7 @@ export default function Navbar() {
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 68 }}>
           {/* Logo */}
           <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
-            <span style={{ fontFamily: "'Rubik Glitch', system-ui", fontWeight: 400, fontSize: 24, color: "var(--text-primary)" }}>
-              {siteData.brand.name}
-            </span>
+            <BrandLogo showIcon={false} style={{ fontSize: 24, color: "var(--text-primary)" }} textStyle={{ fontSize: 24 }} />
           </Link>
 
           {/* Desktop nav */}
