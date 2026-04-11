@@ -18,9 +18,9 @@ export default function Team() {
           </p>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }} className="team-grid">
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20, justifyItems: "center", maxWidth: 1200, margin: "0 auto" }} className="team-grid">
           {team.map((member) => (
-            <div key={member.name} className="card card-hover" style={{ padding: "32px 24px", textAlign: "center" }}>
+            <div key={member.name} className="card card-hover" style={{ padding: "32px 24px", textAlign: "center", minWidth: 320, maxWidth: 420 }}>
               {/* Avatar */}
               <div style={{
                 width: 72, height: 72, borderRadius: "50%",

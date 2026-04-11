@@ -1,3 +1,4 @@
+import { Lock, Sparkles, Zap } from "lucide-react";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Projects from "@/components/Projects";
@@ -42,15 +43,14 @@ export default function Home() {
       {/* Why us strip */}
       <section style={{ padding: "80px 24px", borderBottom: "1px solid var(--border)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 1, border: "1px solid var(--border)", borderRadius: 14, overflow: "hidden" }} className="why-grid">
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 1, border: "1px solid var(--border)", borderRadius: 14, overflow: "hidden" }} className="why-grid">
             {[
-              { icon: "⚡", title: "Fast Delivery", desc: "Most projects delivered within 2–4 weeks. We move quickly without cutting corners." },
-              { icon: "💎", title: "Premium Quality", desc: "Enterprise-grade code, design, and architecture at startup-friendly prices." },
-              { icon: "🔒", title: "Full Ownership", desc: "You own 100% of the code, assets, and infrastructure. No lock-in, ever." },
+              { icon: <Zap size={24} />, title: "Fast Delivery", desc: "Most projects delivered within 2–4 weeks. We move quickly without cutting corners." },
+              { icon: <Sparkles size={24} />, title: "Premium Quality", desc: "Enterprise-grade code, design, and architecture at startup-friendly prices." },
             ].map((item, i) => (
               <div key={i} className="card-hover" style={{
                 padding: "36px 32px", background: "var(--bg-card)",
-                borderRight: i < 2 ? "1px solid var(--border)" : "none",
+                borderRight: i < 1 ? "1px solid var(--border)" : "none",
                 display: "flex", gap: 20, alignItems: "flex-start",
               }}>
                 <div style={{
