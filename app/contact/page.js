@@ -1,5 +1,6 @@
 "use client";
 import ContactForm from "@/components/ContactForm";
+import { MessageCircle, Mail, Phone, MapPin, Zap, Check } from "lucide-react";
 import { siteData } from "@/data/siteData";
 
 
@@ -38,7 +39,7 @@ export default function ContactPage() {
                 borderRadius: 14, padding: "24px 24px",
                 display: "flex", alignItems: "center", gap: 16,
               }}>
-                <div style={{ fontSize: 32 }}>⚡</div>
+                <div style={{ fontSize: 32 }}><Zap size={32} /></div>
                 <div>
                   <p style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 15, marginBottom: 4 }}>
                     {contact.responseTime}
@@ -62,7 +63,7 @@ export default function ContactPage() {
                     onMouseEnter={e => { e.currentTarget.style.borderColor = "var(--amber)"; }}
                     onMouseLeave={e => { e.currentTarget.style.borderColor = "var(--border)"; }}
                   >
-                    <span style={{ fontSize: 22 }}>✉️</span>
+                    <Mail size={22} />
                     <div>
                       <p style={{ fontSize: 11, color: "var(--text-muted)", fontWeight: 600, marginBottom: 2, fontFamily: "'Outfit', sans-serif", letterSpacing: "0.05em", textTransform: "uppercase" }}>Email</p>
                       <p style={{ fontSize: 14, fontWeight: 500 }}>{contact.email}</p>
@@ -77,7 +78,7 @@ export default function ContactPage() {
                     onMouseEnter={e => { e.currentTarget.style.borderColor = "var(--amber)"; }}
                     onMouseLeave={e => { e.currentTarget.style.borderColor = "var(--border)"; }}
                   >
-                    <span style={{ fontSize: 22 }}>📞</span>
+                    <Phone size={22} />
                     <div>
                       <p style={{ fontSize: 11, color: "var(--text-muted)", fontWeight: 600, marginBottom: 2, fontFamily: "'Outfit', sans-serif", letterSpacing: "0.05em", textTransform: "uppercase" }}>Phone</p>
                       <p style={{ fontSize: 14, fontWeight: 500 }}>{contact.phone}</p>
@@ -92,7 +93,7 @@ export default function ContactPage() {
                     onMouseEnter={e => { e.currentTarget.style.background = "rgba(37,211,102,0.12)"; }}
                     onMouseLeave={e => { e.currentTarget.style.background = "rgba(37,211,102,0.07)"; }}
                   >
-                    <span style={{ fontSize: 22 }}>💬</span>
+                    <MessageCircle size={22} />
                     <div>
                       <p style={{ fontSize: 11, fontWeight: 600, marginBottom: 2, fontFamily: "'Outfit', sans-serif", letterSpacing: "0.05em", textTransform: "uppercase" }}>WhatsApp</p>
                       <p style={{ fontSize: 14, fontWeight: 600 }}>Start a chat instantly</p>
@@ -104,7 +105,7 @@ export default function ContactPage() {
                     background: "rgba(255,255,255,0.02)", border: "1px solid var(--border)",
                     color: "var(--text-secondary)",
                   }}>
-                    <span style={{ fontSize: 22 }}>📍</span>
+                    <MapPin size={22} />
                     <div>
                       <p style={{ fontSize: 11, color: "var(--text-muted)", fontWeight: 600, marginBottom: 2, fontFamily: "'Outfit', sans-serif", letterSpacing: "0.05em", textTransform: "uppercase" }}>Location</p>
                       <p style={{ fontSize: 14, fontWeight: 500, color: "var(--text-primary)" }}>{contact.location}</p>
@@ -126,7 +127,7 @@ export default function ContactPage() {
                     "Transparent, fixed-price quotes",
                   ].map((item) => (
                     <div key={item} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 13, color: "var(--text-secondary)" }}>
-                      <span style={{ color: "var(--amber)", fontWeight: 800 }}>✓</span>
+                      <Check size={16} style={{ color: "var(--amber)" }} />
                       {item}
                     </div>
                   ))}

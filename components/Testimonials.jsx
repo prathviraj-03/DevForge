@@ -37,19 +37,6 @@ export default function Testimonials() {
           ))}
         </div>
       </div>
-
-      {/* All testimonials static grid below */}
-      <div style={{ maxWidth: 1200, margin: "60px auto 0", padding: "0 24px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }} className="test-grid">
-          {testimonials.map((t, i) => (
-            <TestimonialCard key={i} t={t} static />
-          ))}
-        </div>
-      </div>
-
-      <style>{`
-        @media (max-width: 640px) { .test-grid { grid-template-columns: 1fr !important; } }
-      `}</style>
     </section>
   );
 }

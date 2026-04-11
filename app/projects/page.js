@@ -1,4 +1,5 @@
 "use client";
+import { Sparkles, TrendingUp } from "lucide-react";
 import CTA from "@/components/CTA";
 import { siteData } from "@/data/siteData";
 
@@ -13,17 +14,14 @@ const gradientMap = {
 };
 
 export default function ProjectsPage() {
-  const { projects, hero } = siteData;
-
-  // Get unique categories
-  const categories = ["All", ...new Set(projects.map((p) => p.category))];
+  const { projects } = siteData;
 
   return (
     <>
       {/* Hero */}
       <section className="grid-bg" style={{ padding: "140px 24px 80px", borderBottom: "1px solid var(--border)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 2 }}>
-          <span className="section-badge">✦ Portfolio</span>
+          <span className="section-badge" style={{ display: "inline-flex", alignItems: "center", gap: 8 }}><Sparkles size={14} /> Portfolio</span>
           <h1 style={{
             fontFamily: "'Outfit', sans-serif", fontWeight: 800,
             fontSize: "clamp(48px, 8vw, 84px)", lineHeight: 1.05,
@@ -43,9 +41,10 @@ export default function ProjectsPage() {
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px" }}>
           <div className="projects-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 32 }}>
             {projects.map((p, i) => (
-              <div key={i} className="card card-hover" style={{
-                display: "flex", flexDirection: "column", overflow: "hidden",
-                gridColumn: i === 0 ? "span 3" : "auto", display: i === 0 ? "flex" : "flex",
+              <div key={p.title} className="card card-hover" style={{
+                overflow: "hidden",
+                gridColumn: i === 0 ? "span 3" : "auto",
+                display: "flex",
                 flexDirection: i === 0 ? "row" : "column",
                 border: i === 0 ? "1px solid var(--amber)" : "1px solid var(--border)",
                 background: i === 0 ? "rgba(245,158,11,0.015)" : "var(--bg-card)",
@@ -80,7 +79,7 @@ export default function ProjectsPage() {
                     fontSize: 13, color: "var(--amber)", fontWeight: 600,
                     display: "flex", alignItems: "center", gap: 6,
                   }}>
-                    📈 {p.result}
+                    <TrendingUp size={14} /> {p.result}
                   </div>
 
                   {/* Tech + CTA row */}
@@ -125,9 +124,9 @@ export default function ProjectsPage() {
           </div>
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 12 }}>
             {[
-              "🏦 FinTech", "🏥 HealthTech", "🎓 EdTech", "🛒 E-Commerce",
-              "🚚 Logistics", "🤝 HR Tech", "🏗️ PropTech", "🎮 Gaming",
-              "✈️ Travel", "🍔 FoodTech", "⚖️ LegalTech", "🌿 GreenTech",
+              "FinTech", "HealthTech", "EdTech", "E-Commerce",
+              "Logistics", "HR Tech", "PropTech", "Gaming",
+              "Travel", "FoodTech", "LegalTech", "GreenTech",
             ].map((ind) => (
               <span key={ind} className="card card-hover" style={{
                 padding: "12px 20px", fontSize: 14, fontWeight: 600,

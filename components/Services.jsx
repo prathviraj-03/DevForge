@@ -1,6 +1,16 @@
 "use client";
 import Link from "next/link";
+import { Cpu, Globe2, Hammer, Server, ShoppingCart, Cloud } from "lucide-react";
 import { siteData } from "@/data/siteData";
+
+const serviceIcons = {
+  web: Globe2,
+  custom: Hammer,
+  backend: Server,
+  ecommerce: ShoppingCart,
+  ai: Cpu,
+  cloud: Cloud,
+};
 
 export default function Services({ preview = false }) {
   const { services } = siteData;
@@ -66,7 +76,10 @@ export default function Services({ preview = false }) {
                 display: "flex", alignItems: "center", justifyContent: "center",
                 fontSize: 24, marginBottom: 20,
               }}>
-                {s.icon}
+                {(() => {
+                  const Icon = serviceIcons[s.icon] ?? Globe2;
+                  return <Icon size={24} color="var(--amber)" />;
+                })()}
               </div>
               <h3 style={{ fontSize: 20, fontWeight: 700, marginBottom: 10, fontFamily: "'Outfit', sans-serif" }}>{s.title}</h3>
               <p style={{ color: "var(--text-secondary)", fontSize: 14, lineHeight: 1.7, marginBottom: 20 }}>{s.description}</p>
@@ -96,9 +109,7 @@ export default function Services({ preview = false }) {
       </div>
 
       <style>{`
-        @media (max-width: 900px) {
-          .services-grid { grid-template-columns: repeat(2, 1fr) !important; }
-        }
+        .services-grid { grid-template-columns: repeat(2, 1fr) !important; }
         @media (max-width: 560px) {
           .services-grid { grid-template-columns: 1fr !important; }
         }

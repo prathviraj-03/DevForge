@@ -18,8 +18,17 @@ export default function Navbar() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handler);
+    let ticking = false;
+    const handler = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
@@ -49,7 +58,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav */}
-          <div style={{ display: "flex", alignItems: "center", gap: 4 }} className="hidden md:flex">
+          <div style={{ display: "flex", alignItems: "center", gap: 4 }} className="desktop-menu">
             {navLinks.map((l) => (
               <Link
                 key={l.href}
@@ -72,20 +81,20 @@ export default function Navbar() {
 
           {/* CTA + Hamburger */}
           <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-            <a href="/contact" className="btn-primary hidden md:inline-flex" style={{ padding: "9px 20px", fontSize: 14 }}>
+            <a href="/contact" className="btn-primary desktop-cta" style={{ padding: "9px 20px", fontSize: 14 }}>
               Hire Us →
             </a>
             {/* Hamburger */}
             <button
               onClick={() => setOpen(true)}
               style={{ background: "none", border: "none", cursor: "pointer", color: "var(--text-primary)", padding: 4 }}
-              className="md:hidden"
+              className="mobile-hamburger"
               aria-label="Open menu"
             >
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-                <line x1="2" y1="6" x2="20" y2="6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                <line x1="2" y1="11" x2="20" y2="11" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                <line x1="2" y1="16" x2="20" y2="16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
               </svg>
             </button>
           </div>
@@ -93,36 +102,46 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile menu */}
-      {open && (
-        <div style={{
-          position: "fixed", inset: 0, background: "var(--bg-primary)",
-          zIndex: 200, display: "flex", flexDirection: "column",
-          alignItems: "center", justifyContent: "center", gap: 8,
-        }}>
-          <button
-            onClick={() => setOpen(false)}
+      <div style={{
+        position: "fixed", inset: 0, background: "var(--bg-primary)",
+        zIndex: 200, display: "flex", flexDirection: "column",
+        alignItems: "center", justifyContent: "center", gap: 8,
+        transform: open ? "translateX(0)" : "translateX(100%)",
+        pointerEvents: open ? "auto" : "none",
+        transition: "transform 0.4s cubic-bezier(0.77, 0, 0.175, 1)",
+      }}>
+        <button
+          onClick={() => setOpen(false)}
+          style={{
+            position: "absolute", top: 20, right: 24,
+            background: "none", border: "none", cursor: "pointer",
+            color: "var(--text-secondary)", fontSize: 28,
+          }}
+        >×</button>
+        {navLinks.map((l) => (
+          <Link
+            key={l.href}
+            href={l.href}
             style={{
-              position: "absolute", top: 20, right: 24,
-              background: "none", border: "none", cursor: "pointer",
-              color: "var(--text-secondary)", fontSize: 28,
+              fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 28,
+              textDecoration: "none",
+              color: pathname === l.href ? "var(--amber)" : "var(--text-primary)",
+              padding: "12px 0",
+              transition: "color 0.2s",
             }}
-          >×</button>
-          {navLinks.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              style={{
-                fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 28,
-                textDecoration: "none",
-                color: pathname === l.href ? "var(--amber)" : "var(--text-primary)",
-                padding: "12px 0",
-                transition: "color 0.2s",
-              }}
-            >{l.label}</Link>
-          ))}
-          <a href="/contact" className="btn-primary" style={{ marginTop: 24 }}>Hire Us →</a>
-        </div>
-      )}
+          >{l.label}</Link>
+        ))}
+        <a href="/contact" className="btn-primary" style={{ marginTop: 24 }}>Hire Us →</a>
+      </div>
+
+      <style>{`
+        .mobile-hamburger { display: none; }
+        @media (max-width: 768px) {
+          .desktop-menu { display: none !important; }
+          .desktop-cta { display: none !important; }
+          .mobile-hamburger { display: flex; align-items: center; justify-content: center; }
+        }
+      `}</style>
     </>
   );
 }

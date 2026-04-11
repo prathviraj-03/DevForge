@@ -1,4 +1,5 @@
 "use client";
+import { Check, MessageCircle, FileText, Wrench, Rocket, ShieldCheck, X } from "lucide-react";
 import Services from "@/components/Services";
 import CTA from "@/components/CTA";
 import { siteData } from "@/data/siteData";
@@ -10,8 +11,8 @@ function CheckIcon() {
       width: 18, height: 18, borderRadius: "50%",
       background: "rgba(245,158,11,0.12)", border: "1px solid rgba(245,158,11,0.3)",
       display: "inline-flex", alignItems: "center", justifyContent: "center",
-      fontSize: 10, color: "var(--amber)", flexShrink: 0,
-    }}>✓</span>
+      flexShrink: 0,
+    }}><Check size={12} color="var(--amber)" /></span>
   );
 }
 
@@ -21,8 +22,8 @@ function CrossIcon() {
       width: 18, height: 18, borderRadius: "50%",
       background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)",
       display: "inline-flex", alignItems: "center", justifyContent: "center",
-      fontSize: 10, color: "var(--text-muted)", flexShrink: 0,
-    }}>×</span>
+      flexShrink: 0,
+    }}><X size={12} color="var(--text-muted)" /></span>
   );
 }
 
@@ -59,10 +60,10 @@ export default function ServicesPage() {
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 1, border: "1px solid var(--border)", borderRadius: 14, overflow: "hidden" }} className="process-grid">
             {[
-              { step: "01", icon: "💬", title: "Discovery Call", desc: "Free 30-min consultation to understand your goals, timeline, and budget." },
-              { step: "02", icon: "📋", title: "Proposal & Plan", desc: "We send a detailed scope, wireframes, and fixed-price quote within 48 hours." },
-              { step: "03", icon: "🛠️", title: "Build & Iterate", desc: "Weekly demos and daily Slack updates. You see progress every step of the way." },
-              { step: "04", icon: "🚀", title: "Launch & Support", desc: "Deployment, handover, and post-launch support included in every plan." },
+              { step: "01", icon: <MessageCircle size={28} />, title: "Discovery Call", desc: "Free 30-min consultation to understand your goals, timeline, and budget." },
+              { step: "02", icon: <FileText size={28} />, title: "Proposal & Plan", desc: "We send a detailed scope, wireframes, and fixed-price quote within 48 hours." },
+              { step: "03", icon: <Wrench size={28} />, title: "Build & Iterate", desc: "Weekly demos and daily Slack updates. You see progress every step of the way." },
+              { step: "04", icon: <Rocket size={28} />, title: "Launch & Support", desc: "Deployment, handover, and post-launch support included in every plan." },
             ].map((item, i) => (
               <div key={i} className="card-hover" style={{
                 padding: "36px 28px", background: "var(--bg-card)",
@@ -169,7 +170,7 @@ export default function ServicesPage() {
             background: "rgba(245,158,11,0.04)", border: "1px solid rgba(245,158,11,0.12)",
             borderRadius: 14, display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap",
           }}>
-            <div style={{ fontSize: 36 }}>🛡️</div>
+            <div style={{ fontSize: 36 }}><ShieldCheck size={36} /></div>
             <div>
               <h3 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 17, marginBottom: 4 }}>Satisfaction Guarantee</h3>
               <p style={{ color: "var(--text-secondary)", fontSize: 14 }}>

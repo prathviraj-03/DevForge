@@ -9,16 +9,25 @@ export default function Hero() {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    
+    const orb1 = el.querySelector(".orb1");
+    const orb2 = el.querySelector(".orb2");
+    let ticking = false;
+
     // Parallax on mouse move
     const handler = (e) => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 30;
-      const y = (e.clientY / window.innerHeight - 0.5) * 20;
-      const orb1 = el.querySelector(".orb1");
-      const orb2 = el.querySelector(".orb2");
-      if (orb1) orb1.style.transform = `translate(${x * 0.6}px, ${y * 0.6}px)`;
-      if (orb2) orb2.style.transform = `translate(${-x * 0.4}px, ${-y * 0.4}px)`;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const x = (e.clientX / window.innerWidth - 0.5) * 30;
+          const y = (e.clientY / window.innerHeight - 0.5) * 20;
+          if (orb1) orb1.style.transform = `translate(${x * 0.6}px, ${y * 0.6}px)`;
+          if (orb2) orb2.style.transform = `translate(${-x * 0.4}px, ${-y * 0.4}px)`;
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener("mousemove", handler);
+    window.addEventListener("mousemove", handler, { passive: true });
     return () => window.removeEventListener("mousemove", handler);
   }, []);
 
@@ -34,6 +43,7 @@ export default function Hero() {
         background: "radial-gradient(circle, rgba(245,158,11,0.08) 0%, transparent 70%)",
         transition: "transform 0.8s cubic-bezier(0.23,1,0.32,1)",
         pointerEvents: "none",
+        willChange: "transform",
       }} />
       <div className="orb2" style={{
         position: "absolute", width: 500, height: 500,
@@ -41,6 +51,7 @@ export default function Hero() {
         background: "radial-gradient(circle, rgba(245,158,11,0.05) 0%, transparent 70%)",
         transition: "transform 1s cubic-bezier(0.23,1,0.32,1)",
         pointerEvents: "none",
+        willChange: "transform",
       }} />
 
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", position: "relative", zIndex: 2, width: "100%" }}>
