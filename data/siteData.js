@@ -331,7 +331,7 @@ export const siteData = {
   contact: {
     email: "prathvirajacharya0407@gmail.com",
     phone: "+91 9380985762",
-    whatsapp: "https://wa.me/919380985762",
+    whatsapp: "https://api.whatsapp.com/send?phone=919380985762&text=Hi%20DevForge!%20I'd%20like%20to%20discuss%20a%20project%20with%20your%20team.",
     whatsappMessage:
       "Hi DevForge! I'd like to discuss a project with your team.",
     location: "Mangalore, India (Remote-First)",
