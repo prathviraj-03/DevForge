@@ -1,0 +1,30 @@
+<svg width="180" height="40" viewBox="0 0 180 40" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definitions for the Glitch Filter and Fonts -->
+  <defs>
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&amp;display=swap');
+      
+      .rubik-glitch-regular {
+        font-family: "Rubik Glitch", system-ui;
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+    <filter id="glitch">
+      <feOffset in="SourceGraphic" dx="-1" dy="0" result="red" />
+      <feOffset in="SourceGraphic" dx="1" dy="0" result="blue" />
+      <feBlend in="red" in2="blue" mode="screen" />
+    </filter>
+  </defs>
+
+  <!-- Brand Name with Glitch Style -->
+  <g filter="url(#glitch)">
+    <text x="0" y="28" class="rubik-glitch-regular" font-family="'Rubik Glitch', 'Arial Black', sans-serif" font-size="19" font-weight="400" fill="#f2f2ee" letter-spacing="0.04em">
+      DevTechForge
+    </text>
+  </g>
+  
+  <!-- Subtle decorative tech lines for the glitch effect -->
+  <line x1="0" y1="12" x2="16" y2="12" stroke="#f59e0b" stroke-width="1" opacity="0.6" />
+  <line x2="166" y1="32" x1="150" y2="32" stroke="#f59e0b" stroke-width="1" opacity="0.6" />
+</svg>

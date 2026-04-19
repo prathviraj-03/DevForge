@@ -1,6 +1,6 @@
 export const siteData = {
   brand: {
-    name: "DevForge",
+    name: "DevTechForge",
     tagline: "We build scalable web apps for startups & businesses",
     logo: "⬡",
   },
@@ -47,29 +47,29 @@ export const siteData = {
 
   team: [
     {
-      name: "Prathviraj Archarya",
-      role: "Founder & Product Lead",
+      name: "Prathviraj Acharya",
+      image: "https://drive.google.com/thumbnail?id=1HLbhtEJxSujKGbgBdtk9oJ6xCW2eNkGj&sz=w1000",
       avatar: "PA",
       bio: "Driving product strategy, design, and delivery with a strong focus on client success.",
       skills: ["Product Strategy", "React", "Next.js", "UI/UX", "Growth"],
-      social: { github: "#", linkedin: "#", twitter: "#" },
-    },
-    {
-      name: "Dhanush",
-      role: "Lead Engineer",
-      avatar: "D",
-      bio: "Builds scalable systems and clean architecture for web and mobile products.",
-      skills: ["Node.js", "API Design", "Cloud", "Databases", "DevOps"],
-      social: { github: "#", linkedin: "#", twitter: "#" },
+      social: { github: "https://github.com/prathviraj-03", linkedin: "https://www.linkedin.com/in/prathviraj-j-acharya/" },
     },
     {
       name: "Priyanka",
-      role: "Design & Frontend Specialist",
+      image: "https://drive.google.com/thumbnail?id=1_n_nYgfeEAL3rzOvWll4y20Ntt7Bz-18&sz=w1000",
       avatar: "P",
       bio: "Creates polished interfaces and seamless user experiences that convert.",
       skills: ["Figma", "React", "Next.js", "Accessibility", "Brand Design"],
-      social: { github: "#", linkedin: "#", twitter: "#" },
+      social: { github: "https://github.com/Priyanka959", linkedin: "https://www.linkedin.com/in/priyanka-b04963313/" },
     },
+    {
+      name: "Dhanush",
+      image: "https://drive.google.com/thumbnail?id=1CPwf6kztih8PwBT_CpayCyKSUt0w2fMJ&sz=w1000",
+      avatar: "D",
+      bio: "Builds scalable systems and clean architecture for web and mobile products.",
+      skills: ["Node.js", "API Design", "Cloud", "Databases", "DevOps"],
+      social: { github: "https://github.com/dhnshshettigar", linkedin: "https://www.linkedin.com/in/dhanush-shettigar-914766231/" },
+    }
   ],
 
   services: [
@@ -295,7 +295,7 @@ export const siteData = {
       role: "CEO, FinTrack",
       avatar: "VN",
       feedback:
-        "DevForge delivered our entire dashboard in 3 weeks. The quality was enterprise-level. We raised our seed round partly on the strength of the product they built.",
+        "DevTechForge delivered our entire dashboard in 3 weeks. The quality was enterprise-level. We raised our seed round partly on the strength of the product they built.",
       rating: 5,
       project: "FinTrack Dashboard",
     },
@@ -313,7 +313,7 @@ export const siteData = {
       role: "Marketing Director, ShopNest",
       avatar: "RB",
       feedback:
-        "Our old Shopify store was slow and losing us sales. DevForge built a custom solution that cut our page load time by 70% and boosted conversion by 35%. ROI was immediate.",
+        "Our old Shopify store was slow and losing us sales. DevTechForge built a custom solution that cut our page load time by 70% and boosted conversion by 35%. ROI was immediate.",
       rating: 5,
       project: "ShopNest E-Commerce",
     },
@@ -322,7 +322,7 @@ export const siteData = {
       role: "CTO, LogiRoute",
       avatar: "DM",
       feedback:
-        "I've worked with many dev agencies. DevForge stands apart — clean code, good architecture decisions, and they actually push back when an idea won't scale. That's rare.",
+        "I've worked with many dev agencies. DevTechForge stands apart — clean code, good architecture decisions, and they actually push back when an idea won't scale. That's rare.",
       rating: 5,
       project: "LogiRoute Platform",
     },
@@ -331,9 +331,9 @@ export const siteData = {
   contact: {
     email: "prathvirajacharya0407@gmail.com",
     phone: "+91 9380985762",
-    whatsapp: "https://api.whatsapp.com/send?phone=919380985762&text=Hi%20DevForge!%20I'd%20like%20to%20discuss%20a%20project%20with%20your%20team.",
+    whatsapp: "https://api.whatsapp.com/send?phone=919380985762&text=Hi%20DevTechForge!%20I'd%20like%20to%20discuss%20a%20project%20with%20your%20team.",
     whatsappMessage:
-      "Hi DevForge! I'd like to discuss a project with your team.",
+      "Hi DevTechForge! I'd like to discuss a project with your team.",
     location: "Mangalore, India (Remote-First)",
     responseTime: "We respond within 4 hours",
   },

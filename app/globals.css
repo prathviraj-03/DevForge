@@ -112,12 +112,19 @@ h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; font-weight: 700; letter-spa
 .stars { color: var(--amber); }
 .whatsapp-float {
   position: fixed; bottom: 24px; right: 24px; z-index: 1000;
-  background: #25D366; color: white; width: 54px; height: 54px;
+  background: var(--bg-card); color: var(--amber); width: 54px; height: 54px;
   border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  font-size: 24px; box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-  transition: all 0.2s; text-decoration: none;
+  font-size: 24px; box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  border: 1px solid var(--border);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); text-decoration: none;
 }
-.whatsapp-float:hover { transform: scale(1.12); box-shadow: 0 8px 30px rgba(37,211,102,0.55); }
+.whatsapp-float:hover { 
+  transform: translateY(-5px) scale(1.1); 
+  background: var(--amber);
+  color: #050505;
+  border-color: var(--amber);
+  box-shadow: 0 12px 40px var(--amber-glow); 
+}
 .pricing-highlight {
   background: linear-gradient(160deg, rgba(245,158,11,0.09), rgba(245,158,11,0.03));
   border: 1px solid rgba(245,158,11,0.32) !important;
