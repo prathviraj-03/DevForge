@@ -10,7 +10,21 @@ export const metadata = {
     title: siteData.brand.name,
     description: siteData.hero.subheading,
     type: "website",
-  },
+    images: [
+      {
+          url: "/Company_image.jpg",
+          width: 1200,
+          height: 630,
+          alt: `${siteData.brand.name} Preview Image`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: siteData.brand.name,
+      description: siteData.hero.subheading,
+      images: ["/Company_image.jpg"],
+    },
 };
 
 import Navbar from "@/components/Navbar";
