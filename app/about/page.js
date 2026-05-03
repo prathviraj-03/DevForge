@@ -86,7 +86,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <Team />
+      {/* <Team /> */}
       <CTA title="Work with us" subtitle="We take on a limited number of projects each month to ensure quality. Book your spot today." />
     </>
   );
